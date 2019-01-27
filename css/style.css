@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 23px;
+    font-weight: 400;
+    color: #000000;
+    text-transform: none;
+
+    background-color: #dfdfdf;
+
+    /* Временно для сетки */
+    /*background-image: url("img/nerds-index.jpg");*/
+    /*background-size: 1372px auto;*/
+    /*background-repeat: no-repeat;*/
+}
+
+a {
+    text-decoration: none;
+}
+
+.button {
+    text-align: center;
+    color: #ffffff;
+    vertical-align: middle;
+    border-radius: 2px;
+    border: none;
+}
+
+.site-wrapper {
+    width: 490px;
+    list-style: none;
+    background-color: #ffffff;
+}
+
+.main-navigation {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+    list-style: none;
+}
+
+.site-navigation{
+    list-style: none;
+    background-color: #1c6bad; /*здесь будет линейный градиент*/
+}
+.site-navigation a {
+    color: #ffffff;
+}
+
+.current a{
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.add-friend-button {
+    font-size: 12px;
+    line-height: 23px;
+    font-weight: 400;
+    color: white;
+    background-color: #e65400; /*Линейный градиент*/
+    box-shadow: 0px 1px 1px #b6b6b6;
+}
+
+.current-user-name {
+    font-size: 23px;
+    line-height: 21px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.current-residence {
+    font-size: 11px;
+    line-height: 21px;
+    font-weight: 400;
+    color: #757575;
+}
+
+.user-profile-list {
+    list-style: none;
+    font-size: 12px;
+    line-height: 23px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.user-info-list {
+    list-style: none;
+    font-size: 12px;
+    line-height: 23px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.user-e-mail{
+    color: #1574af;
+    text-decoration: underline;
+}
+
+.user-interests-list {
+    list-style: none;
+    font-size: 12px;
+    line-height: 23px;
+    font-weight: 400;
+    color: #1574af;
+}
+
+.user-interests-list li:hover,
+.user-interests-list li:focus {
+    color: #000000;
+}
+
+/*.friends-list {*/
+    /*overflow: scroll; !* Добавляем полосы прокрутки *!*/
+    /*width: 300px; !* Ширина блока *!*/
+    /*height: 150px; !* Высота блока *!*/
+    /*padding: 5px; !* Поля вокруг текста *!*/
+    /*border: solid 1px black; !* Параметры рамки *!*/
+/*}*/
+.friends-list {
+    list-style: none;
+}
+
+.user-name {
+    list-style: none;
+    font-size: 13px;
+    line-height: 23px;
+    font-weight: 700;
+    color: #1574af;
+    text-decoration: underline;
+}
+
+.residence {
+    font-size: 11px;
+    line-height: 23px;
+    font-weight: 400;
+    color:  #373737;
+}
+
+.condition {
+    font-size: 10px;
+    line-height: 23px;
+    font-style: italic;
+    color: #2f8a26;
+}
