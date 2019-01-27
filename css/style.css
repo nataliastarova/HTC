@@ -29,28 +29,81 @@ a {
     border: none;
 }
 
+.visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
 .site-wrapper {
     width: 490px;
+    min-height: 312px;
+    margin-top: 46px;
+    margin-left: 40px;
     list-style: none;
     background-color: #ffffff;
+    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
 }
 
 .main-navigation {
+    height: 31px;
     font-size: 14px;
     line-height: 21px;
     font-weight: 400;
     list-style: none;
+    background-color: #e1e1e1;
+
+    display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 .site-navigation{
     list-style: none;
-    background-color: #1c6bad; /*здесь будет линейный градиент*/
+    display: flex;
+    margin: 0;
+    padding: 0;
+
 }
 .site-navigation a {
     color: #ffffff;
 }
 
-.current a{
+.tab {
+    box-sizing: border-box;
+    width: 159px;
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 17px;
+    text-shadow: 0px -1px #084d6e;
+    background: linear-gradient( #0685b4, #1c6bad);
+    border-radius: 3px 3px 0 0;
+
+}
+
+.current-tab {
+    box-sizing: border-box;
+    width: 90px;
+    margin: 0;
+    margin-right: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0px -1px 3px 0px rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+}
+
+.current-tab a{
     color: #000000;
     background-color: #ffffff;
 }
