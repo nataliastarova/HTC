@@ -4,24 +4,46 @@
         <meta charset="UTF-8">
         <title>Тестовое задание</title>
         <link href="css/style.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#profile").click(function() {
+                    // console.log("profile clicked");
+                    $("#profile").attr("class", "current-tab");
+                    $("#friends").attr("class", "tab");
+
+                    $("#user-profile").show();
+                    $("#user-friends").hide();
+                });
+
+                $("#friends").click(function() {
+                    // console.log("friends clicked");
+                    $("#profile").attr("class", "tab");
+                    $("#friends").attr("class", "current-tab");
+
+                    $("#user-profile").hide();
+                    $("#user-friends").show();
+                });
+            });
+        </script>
     </head>
     <body>
         <div class="site-wrapper">
             <header class="main-header">
                 <nav class="main-navigation">
                     <ul class="site-navigation">
-                        <li class="current-tab"><a href="#">Профиль</a></li>
-                        <li class="tab"><a href="#">Добавить в друзья</a></li>
+                        <li class="current-tab" id="profile"><a href="#">Профиль</a></li>
+                        <li class="tab" id="friends"><a href="#">Добавить в друзья</a></li>
                     </ul>
                 </nav>
             </header>
 
             <main class="main-page">
                 <h1 class="visually-hidden">Страница пользователя</h1>
-                <section class="user-profile">
+                <section id="user-profile" class="user-profile">
                     <h2 class="visually-hidden">Информация о пользователе</h2>
                     <div class="user-photo">
-                        <a class="user-profile-photo">
+                        <a class="current-user user-profile-photo">
                             <img src="img/user-0.png" width="132" height="169" alt="Фото пользователя">
                         </a>
                         <button class="button add-friend-button" type="submit">Добавить в друзья</button>
@@ -30,17 +52,19 @@
                         <h2 class="visually-hidden">Личные данные</h2>
                         <a class="user-name current-user-name">Виталя Гора</a>  <!-- Добавить скрытый заголовок про имя пользователя?-->
                         <p class="residence current-residence">г. Нижние Шахты</p>
-                        <ul class="user-profile-list">
-                            <li>Семейное положение</li>
-                            <li>Телефон</li>
-                            <li>E-mail</li>
-                            <li>Интересы</li>
-                        </ul>
-                        <ul class="user-info-list">
-                            <li>холост</li>
-                            <li>+7 (440) 554-32-12</li>
-                            <li><a class= user-e-mail href=#>vitalya@gora.ru</a></li>
-                        </ul>
+                        <div class="about-user">
+                            <ul class="user-profile-list">
+                                <li>Семейное положение</li>
+                                <li>Телефон</li>
+                                <li>E-mail</li>
+                                <li class="interest">Интересы</li>
+                            </ul>
+                            <ul class="user-info-list">
+                                <li>холост</li>
+                                <li>+7 (440) 554-32-12</li>
+                                <li class= user-e-mail><a href=#>vitalya@gora.ru</a></li>
+                            </ul>
+                        </div>
                         <ul class="user-interests-list">
                             <li>музыка</li> <!-- возможно ссылки-->
                             <li>компьютеры</li>
@@ -48,7 +72,7 @@
                         </ul>
                     </section>
                 </section>
-                <section class="user-friends">
+                <section id="user-friends" class="user-friends">
                     <h2 class="visually-hidden">Список друзей пользователя</h2>
                     <ul class="friends-list">
                         <li class="friend">
@@ -59,28 +83,6 @@
                             <div class="friend-info">
                                 <a class="user-name" href="#">Лев Бронштейн</a>
                                 <p class="residence">г. Ханты-Мансийск</p>
-                                <p class="condition">Online</p> <!-- отображается если онлайн-->
-                            </div>
-                        </li>
-                        <li class="friend">
-                            <h3 class="visually-hidden">Информация о друге</h3>
-                            <a class="user-profile-photo" href="#">
-                                <img src="img/user-2.png" width="62" height="62" alt="Фото пользователя">
-                            </a>
-                            <div class="friend-info">
-                                <a class="user-name" href="#">Яндекс Петренко</a>
-                                <p class="residence">г. Пермь</p>
-                                <p class="condition"></p> <!-- отображается если онлайн-->
-                            </div>
-                        </li>
-                        <li class="friend">
-                            <h3 class="visually-hidden">Информация о друге</h3>
-                            <a class="user-profile-photo" href="#">
-                                <img src="img/user-3.png" width="62" height="62" alt="Фото пользователя">
-                            </a>
-                            <div class="friend-info">
-                                <a class="user-name" href="#">Инна Нашлась</a>
-                                <p class="residence">г. Омск</p>
                                 <p class="condition">Online</p> <!-- отображается если онлайн-->
                             </div>
                         </li>
@@ -98,11 +100,33 @@
                         <li class="friend">
                             <h3 class="visually-hidden">Информация о друге</h3>
                             <a class="user-profile-photo" href="#">
+                                <img src="img/user-2.png" width="62" height="62" alt="Фото пользователя">
+                            </a>
+                            <div class="friend-info">
+                                <a class="user-name" href="#">Яндекс Петренко</a>
+                                <p class="residence">г. Пермь</p>
+                                <p class="condition"></p> <!-- отображается если онлайн-->
+                            </div>
+                        </li>
+                        <li class="friend">
+                            <h3 class="visually-hidden">Информация о друге</h3>
+                            <a class="user-profile-photo" href="#">
                                 <img src="img/user-5.png" width="62" height="62" alt="Фото пользователя">
                             </a>
                             <div class="friend-info">
                                 <a class="user-name" href="#">Успех Возможностей</a>
                                 <p class="residence">г. Радонеж</p>
+                                <p class="condition">Online</p> <!-- отображается если онлайн-->
+                            </div>
+                        </li>
+                        <li class="friend">
+                            <h3 class="visually-hidden">Информация о друге</h3>
+                            <a class="user-profile-photo" href="#">
+                                <img src="img/user-3.png" width="62" height="62" alt="Фото пользователя">
+                            </a>
+                            <div class="friend-info">
+                                <a class="user-name" href="#">Инна Нашлась</a>
+                                <p class="residence">г. Омск</p>
                                 <p class="condition">Online</p> <!-- отображается если онлайн-->
                             </div>
                         </li>

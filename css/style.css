@@ -23,7 +23,6 @@ a {
 
 .button {
     text-align: center;
-    color: #ffffff;
     vertical-align: middle;
     border-radius: 2px;
     border: none;
@@ -42,12 +41,11 @@ a {
 
 .site-wrapper {
     width: 490px;
-    min-height: 312px;
     margin-top: 46px;
     margin-left: 40px;
     list-style: none;
     background-color: #ffffff;
-    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.25);
+    /*box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.25);*/
     border-radius: 3px;
 }
 
@@ -57,7 +55,7 @@ a {
     line-height: 21px;
     font-weight: 400;
     list-style: none;
-    background-color: #e1e1e1;
+    background-color: #dfdfdf;
 
     display: flex;
     margin: 0;
@@ -75,9 +73,13 @@ a {
     color: #ffffff;
 }
 
+.site-navigation li {
+    margin-right: 10px;
+}
+
 .tab {
     box-sizing: border-box;
-    width: 159px;
+    /*width: 159px;*/
     margin: 0;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -91,15 +93,14 @@ a {
 
 .current-tab {
     box-sizing: border-box;
-    width: 90px;
+    /*width: 90px;*/
     margin: 0;
-    margin-right: 10px;
     padding-left: 16px;
     padding-right: 16px;
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 3px 3px 0 0;
-    box-shadow: 0px -1px 3px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 1px -1px 0px 0px rgba(0, 0, 0, 0.25);
     background-color: #ffffff;
 }
 
@@ -108,27 +109,91 @@ a {
     background-color: #ffffff;
 }
 
-.add-friend-button {
+.main-page{
+    /*display: flex;*/
+    /*margin-top: 15px;*/
+    /*margin-left: 15px;*/
+    /*margin-right: 28px;*/
+    /*margin-bottom: 15px;*/
+    padding-bottom: 35px;
+    border-radius: 3px;
+    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.25);
+}
+
+.user-profile {
+    display: flex;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 28px;
+    padding-bottom: 15px;
+    margin: 0;
+    outline: 1px solid orange;
+}
+
+.user-photo {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    /*margin-right: 20px;*/
+    padding: 0;
+    outline: 1px solid yellow;
+}
+
+.user-profile-photo.current-user {
+    margin-bottom: 6px;
+    height: 169px;
+}
+
+.button.add-friend-button {
     font-size: 12px;
     line-height: 23px;
     font-weight: 400;
-    color: white;
-    background-color: #e65400; /*Линейный градиент*/
+    height: 31px;
+    width: 132px;
+    margin: 0px;
+    /*padding-left: 16px;*/
+    /*padding-right: 16px;*/
+    padding-top: 4px;
+    padding-bottom: 4px;
+
+    color: #ffffff;
+    background: linear-gradient( #e68100, #e65400); /*Линейный градиент*/
+    text-shadow: 0px -1px #833900;
     box-shadow: 0px 1px 1px #b6b6b6;
 }
 
-.current-user-name {
+.user-info {
+    display: flex;
+    flex-direction: column;
+    outline: 1px solid yellowgreen;
+}
+
+.user-name.current-user-name {
     font-size: 23px;
     line-height: 21px;
     font-weight: 400;
+    padding: 0;
+    margin: 0;
+    padding-top: 7px;
+
     color: #000000;
+    text-decoration: none;
 }
 
-.current-residence {
+.residence.current-residence {
     font-size: 11px;
     line-height: 21px;
     font-weight: 400;
+    margin: 0;
+    margin-bottom: 24px;
+    padding: 0;
     color: #757575;
+}
+
+.about-user {
+    display: flex;
+    outline: 1px solid blue;
+
 }
 
 .user-profile-list {
@@ -137,6 +202,13 @@ a {
     line-height: 23px;
     font-weight: 700;
     color: #000000;
+    margin: 0;
+    padding: 0;
+    margin-right: 32px;
+}
+
+.interest {
+    padding-top: 25px;
 }
 
 .user-info-list {
@@ -144,10 +216,13 @@ a {
     font-size: 12px;
     line-height: 23px;
     font-weight: 400;
+
+    margin: 0px;
+    padding: 0px;
     color: #000000;
 }
 
-.user-e-mail{
+.user-e-mail {
     color: #1574af;
     text-decoration: underline;
 }
@@ -157,12 +232,37 @@ a {
     font-size: 12px;
     line-height: 23px;
     font-weight: 400;
+
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.user-interests-list li {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 3px;
+
+    border: 1px solid #d5d5d5;
+    border-radius: 2px;
     color: #1574af;
 }
 
 .user-interests-list li:hover,
 .user-interests-list li:focus {
     color: #000000;
+    cursor: pointer;
+}
+
+.user-friends {
+    display: none;
+
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 28px;
+    padding-bottom: 15px;
+    margin: 0;
+    outline: 1px solid orange;
 }
 
 /*.friends-list {*/
@@ -173,22 +273,57 @@ a {
     /*border: solid 1px black; !* Параметры рамки *!*/
 /*}*/
 .friends-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
     list-style: none;
+}
+
+.friend {
+    display: flex;
+    width: 222px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 25px;
+
+    outline: 1px solid yellowgreen;
+}
+
+.user-profile-photo {
+    padding: 0;
+    margin: 0;
+    margin-right: 17px;
+}
+
+.friend-info {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
 }
 
 .user-name {
     list-style: none;
     font-size: 13px;
-    line-height: 23px;
+    line-height: 20px;
     font-weight: 700;
+
+    padding: 0;
+    margin: 0;
+
     color: #1574af;
     text-decoration: underline;
 }
 
 .residence {
     font-size: 11px;
-    line-height: 23px;
+    line-height: 15px;
     font-weight: 400;
+
+    margin: 0;
+    padding: 0;
+
     color:  #373737;
 }
 
@@ -196,5 +331,10 @@ a {
     font-size: 10px;
     line-height: 23px;
     font-style: italic;
+
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+
     color: #2f8a26;
 }
