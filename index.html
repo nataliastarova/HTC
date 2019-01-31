@@ -7,19 +7,19 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script>
             $(document).ready(function() {
-                $("#profile").click(function() {
+                $("#tab-profile").click(function() {
                     // console.log("profile clicked");
-                    $("#profile").attr("class", "current-tab");
-                    $("#friends").attr("class", "tab");
+                    $("#tab-profile").attr("class", "current-label");
+                    $("#tab-user-friends").attr("class", "label-tab");
 
                     $("#user-profile").show();
                     $("#user-friends").hide();
                 });
 
-                $("#friends").click(function() {
+                $("#tab-user-friends").click(function() {
                     // console.log("friends clicked");
-                    $("#profile").attr("class", "tab");
-                    $("#friends").attr("class", "current-tab");
+                    $("#tab-user-friends").attr("class", "current-label");
+                    $("#tab-profile").attr("class", "label-tab");
 
                     $("#user-profile").hide();
                     $("#user-friends").show();
@@ -29,18 +29,15 @@
     </head>
     <body>
         <div class="site-wrapper">
-            <header class="main-header">
-                <nav class="main-navigation">
-                    <ul class="site-navigation">
-                        <li class="current-tab" id="profile"><a href="#">Профиль</a></li>
-                        <li class="tab" id="friends"><a href="#">Добавить в друзья</a></li>
-                    </ul>
-                </nav>
-            </header>
+            <input class="visually-hidden" type="radio" name="tabs-1" checked>
+            <label class="label-tab current-label" id="tab-profile" for="tab-profile" title="Профиль">Профиль</label>
 
-            <main class="main-page">
-                <h1 class="visually-hidden">Страница пользователя</h1>
-                <section id="user-profile" class="user-profile">
+            <input class="visually-hidden" type="radio" name="tabs-2">
+            <label class="label-tab" for="tab-user-friends" id="tab-user-friends" title="Друзья пользователя">Друзья пользователя</label>
+
+            <h1 class="visually-hidden">Страница пользователя</h1>
+            <div class="wrapper-1 content" id="user-profile">
+                <section class="user-profile" >
                     <h2 class="visually-hidden">Информация о пользователе</h2>
                     <div class="user-photo">
                         <a class="current-user user-profile-photo">
@@ -72,7 +69,9 @@
                         </ul>
                     </section>
                 </section>
-                <section id="user-friends" class="user-friends">
+            </div>
+            <div class="wrapper-2 content" id="user-friends">
+                <section class="user-friends">
                     <h2 class="visually-hidden">Список друзей пользователя</h2>
                     <ul class="friends-list">
                         <li class="friend">
@@ -143,7 +142,7 @@
                         </li>
                     </ul>
                 </section>
-            </main>
+            </div>
         </div>
     </body>
 </html>
