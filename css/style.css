@@ -28,7 +28,8 @@ a {
     border: none;
 }
 
-.visually-hidden {
+.visually-hidden,
+input[type="radio"].visually-hidden {
     position: absolute;
     clip: rect(0 0 0 0);
     width: 1px;
@@ -40,93 +41,80 @@ a {
 }
 
 .site-wrapper {
-    width: 490px;
+    /*height: 312px;*/
+    /*overflow: hidden;*/
+    max-width: 490px;
     margin-top: 46px;
     margin-left: 40px;
     list-style: none;
-    background-color: #ffffff;
+    /*background-color: #ffffff;*/
     /*box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.25);*/
     border-radius: 3px;
 }
 
-.main-navigation {
-    height: 31px;
-    font-size: 14px;
-    line-height: 21px;
-    font-weight: 400;
-    list-style: none;
-    background-color: #dfdfdf;
 
-    display: flex;
+/*Если не заработает изменить на .site-wrapper.label-tab или .site-wrapper > .label-tab*/
+.label-tab {
+    display: inline-block;
     margin: 0;
-    padding: 0;
-}
-
-.site-navigation{
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-
-}
-.site-navigation a {
-    color: #ffffff;
-}
-
-.site-navigation li {
     margin-right: 10px;
-}
-
-.tab {
-    box-sizing: border-box;
-    /*width: 159px;*/
-    margin: 0;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 15px;
-    padding-right: 17px;
-    text-shadow: 0px -1px #084d6e;
-    background: linear-gradient( #0685b4, #1c6bad);
-    border-radius: 3px 3px 0 0;
-
-}
-
-.current-tab {
-    box-sizing: border-box;
-    /*width: 90px;*/
-    margin: 0;
     padding-left: 16px;
     padding-right: 16px;
     padding-top: 5px;
     padding-bottom: 5px;
+    box-sizing: border-box;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0px -1px #084d6e;
+    background-image: linear-gradient( #0685b4, #1c6bad);
+    border-radius: 3px 3px 0 0;
+}
+
+.label-tab:hover {
+    cursor: pointer;
+}
+
+/*#tab-profile:checked + .label-tab,*/
+/*#tab-user-friends:checked + .label-tab*/
+
+.current-label {
+    display: inline-block;
+    margin: 0;
+    margin-right: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    box-sizing: border-box;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    color: #000000;
+    text-align: center;
+    text-shadow: none;
     border-radius: 3px 3px 0 0;
     box-shadow: 1px -1px 0px 0px rgba(0, 0, 0, 0.25);
+    background-image: none;
     background-color: #ffffff;
 }
 
-.current-tab a{
-    color: #000000;
-    background-color: #ffffff;
-}
 
-.main-page{
-    /*display: flex;*/
-    /*margin-top: 15px;*/
-    /*margin-left: 15px;*/
-    /*margin-right: 28px;*/
-    /*margin-bottom: 15px;*/
-    padding-bottom: 35px;
-    border-radius: 3px;
-    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.25);
-}
 
 .user-profile {
     display: flex;
     padding-top: 15px;
     padding-left: 15px;
     padding-right: 28px;
-    padding-bottom: 15px;
+    padding-bottom: 55px;
     margin: 0;
+
+    background-color: #ffffff;
     outline: 1px solid orange;
 }
 
@@ -254,23 +242,29 @@ a {
     cursor: pointer;
 }
 
-.user-friends {
+.wrapper-2 {
     display: none;
+}
+
+.user-friends {
+    display: flex;
 
     padding-top: 15px;
     padding-left: 15px;
     padding-right: 28px;
     padding-bottom: 15px;
     margin: 0;
+
+    background-color: #ffffff;
     outline: 1px solid orange;
 }
 
 /*.friends-list {*/
-    /*overflow: scroll; !* Добавляем полосы прокрутки *!*/
-    /*width: 300px; !* Ширина блока *!*/
-    /*height: 150px; !* Высота блока *!*/
-    /*padding: 5px; !* Поля вокруг текста *!*/
-    /*border: solid 1px black; !* Параметры рамки *!*/
+/*overflow: scroll; !* Добавляем полосы прокрутки *!*/
+/*width: 300px; !* Ширина блока *!*/
+/*height: 150px; !* Высота блока *!*/
+/*padding: 5px; !* Поля вокруг текста *!*/
+/*border: solid 1px black; !* Параметры рамки *!*/
 /*}*/
 .friends-list {
     display: flex;
