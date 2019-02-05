@@ -42,10 +42,10 @@ input[type="radio"].visually-hidden {
 
 .site-wrapper {
     /*height: 312px;*/
-    /*overflow: hidden;*/
+
     max-width: 490px;
     margin-top: 46px;
-    margin-left: 40px;
+    margin-left: 41px;
     list-style: none;
     /*background-color: #ffffff;*/
     /*box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.25);*/
@@ -57,7 +57,7 @@ input[type="radio"].visually-hidden {
 .label-tab {
     display: inline-block;
     margin: 0;
-    margin-right: 10px;
+    margin-right: 6px;
     padding-left: 16px;
     padding-right: 16px;
     padding-top: 5px;
@@ -84,11 +84,13 @@ input[type="radio"].visually-hidden {
 .current-label {
     display: inline-block;
     margin: 0;
-    margin-right: 10px;
+    margin-right: 5px;
+    padding-top: 6px;
+    padding-bottom: 5px;
     padding-left: 16px;
     padding-right: 16px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+
+
 
     box-sizing: border-box;
 
@@ -99,23 +101,31 @@ input[type="radio"].visually-hidden {
     text-align: center;
     text-shadow: none;
     border-radius: 3px 3px 0 0;
-    box-shadow: 1px -1px 0px 0px rgba(0, 0, 0, 0.25);
+    box-shadow:
+            1px -1px 1px 0px rgba(0, 0, 0, 0.1),
+            -1px -1px 1px 0px rgba(0, 0, 0, 0.1);
     background-image: none;
     background-color: #ffffff;
 }
 
-
+.content {
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 12px;
+    padding-bottom: 14px;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 0 3px 3px 3px;
+}
 
 .user-profile {
     display: flex;
-    padding-top: 15px;
-    padding-left: 15px;
-    padding-right: 28px;
-    padding-bottom: 55px;
     margin: 0;
-
+    padding: 0;
+    padding-bottom: 40px;
+    border-radius: 0 5px 5px 5px;
     background-color: #ffffff;
-    outline: 1px solid orange;
+    /*outline: 1px solid orange;*/
 }
 
 .user-photo {
@@ -124,12 +134,17 @@ input[type="radio"].visually-hidden {
     margin: 0px;
     /*margin-right: 20px;*/
     padding: 0;
-    outline: 1px solid yellow;
+    /*outline: 1px solid yellow;*/
 }
 
 .user-profile-photo.current-user {
     margin-bottom: 6px;
+    box-shadow: inset 0px 1px 3px 3px rgba(0,0,0,.1);
     height: 169px;
+    width: 132px;
+    background-image: url("../img/user-0.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
 }
 
 .button.add-friend-button {
@@ -153,7 +168,10 @@ input[type="radio"].visually-hidden {
 .user-info {
     display: flex;
     flex-direction: column;
-    outline: 1px solid yellowgreen;
+    margin: 0;
+    padding: 0;
+    padding-left: 4px;
+    /*outline: 1px solid yellowgreen;*/
 }
 
 .user-name.current-user-name {
@@ -162,7 +180,7 @@ input[type="radio"].visually-hidden {
     font-weight: 400;
     padding: 0;
     margin: 0;
-    padding-top: 7px;
+    padding-top: 8px;
 
     color: #000000;
     text-decoration: none;
@@ -173,14 +191,14 @@ input[type="radio"].visually-hidden {
     line-height: 21px;
     font-weight: 400;
     margin: 0;
-    margin-bottom: 24px;
+    margin-bottom: 17px;
     padding: 0;
     color: #757575;
 }
 
 .about-user {
     display: flex;
-    outline: 1px solid blue;
+    /*outline: 1px solid blue;*/
 
 }
 
@@ -227,7 +245,7 @@ input[type="radio"].visually-hidden {
 }
 
 .user-interests-list li {
-    padding-left: 10px;
+    padding-left: 9px;
     padding-right: 10px;
     margin-right: 3px;
 
@@ -238,23 +256,35 @@ input[type="radio"].visually-hidden {
 
 .user-interests-list li:hover,
 .user-interests-list li:focus {
-    color: #000000;
     cursor: pointer;
+    color: #000000;
+    background-color: #f3f3f3;
 }
+
+.site-wrapper.wrapper-2 {
+
+     background-color: #ffffff;
+
+ }
 
 .wrapper-2 {
     display: none;
+    background-color: #ffffff;
+
 }
 
 .user-friends {
-    display: flex;
 
-    padding-top: 15px;
-    padding-left: 15px;
-    padding-right: 28px;
-    padding-bottom: 15px;
+    display: block;
+    height: 250px;
+    overflow: scroll;
+    /*padding-top: 15px;*/
+    /*padding-left: 15px;*/
+    /*padding-right: 0px;*/
+    /*padding-bottom: 15px;*/
+    padding: 0;
     margin: 0;
-
+    border-radius: 0 5px 5px 5px;
     background-color: #ffffff;
     outline: 1px solid orange;
 }
@@ -268,6 +298,7 @@ input[type="radio"].visually-hidden {
 /*}*/
 .friends-list {
     display: flex;
+
     flex-wrap: wrap;
     margin: 0;
     padding: 0;
@@ -276,12 +307,19 @@ input[type="radio"].visually-hidden {
 
 .friend {
     display: flex;
-    width: 222px;
+    width: 215px;
     padding: 0;
     margin: 0;
     margin-bottom: 25px;
+    text-align: start;
 
     outline: 1px solid yellowgreen;
+    margin-right: 10px;
+
+}
+
+.friend:nth-child(even) {
+    margin-right: 0px;
 }
 
 .user-profile-photo {
@@ -291,8 +329,9 @@ input[type="radio"].visually-hidden {
 }
 
 .friend-info {
-    display: flex;
-    flex-direction: column;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    display: block;
     margin: 0;
     padding: 0;
 }

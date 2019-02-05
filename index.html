@@ -5,8 +5,10 @@
         <title>Тестовое задание</title>
         <link href="css/style.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="jquery.nicescroll.js"></script>
         <script>
             $(document).ready(function() {
+
                 $("#tab-profile").click(function() {
                     // console.log("profile clicked");
                     $("#tab-profile").attr("class", "current-label");
@@ -14,6 +16,7 @@
 
                     $("#user-profile").show();
                     $("#user-friends").hide();
+                    $("#list").getNiceScroll().hide();
                 });
 
                 $("#tab-user-friends").click(function() {
@@ -23,6 +26,15 @@
 
                     $("#user-profile").hide();
                     $("#user-friends").show();
+                    $("#list").getNiceScroll().resize();
+                    $("#list").getNiceScroll().show();
+                });
+
+                $("#list").niceScroll({
+                    cursorcolor: "#0f7bb1",
+                    cursorwidth: "5px",
+                    cursoropacitymin: "1"
+                    // railpadding: "{top:0, right:0, left:15px, bottom:0}"
                 });
             });
         </script>
@@ -40,9 +52,12 @@
                 <section class="user-profile" >
                     <h2 class="visually-hidden">Информация о пользователе</h2>
                     <div class="user-photo">
-                        <a class="current-user user-profile-photo">
-                            <img src="img/user-0.png" width="132" height="169" alt="Фото пользователя">
-                        </a>
+                        <div class= "current-user user-profile-photo">
+                            <a class= "visually-hidden" href="#">
+                                Фото пользователя
+                                <!--<img src="img/user-0.png" width="132" height="169" alt="Фото пользователя">-->
+                            </a>
+                        </div>
                         <button class="button add-friend-button" type="submit">Добавить в друзья</button>
                     </div>
                     <section class="user-info">
@@ -71,9 +86,75 @@
                 </section>
             </div>
             <div class="wrapper-2 content" id="user-friends">
-                <section class="user-friends">
+                <section class="user-friends" id="list">
                     <h2 class="visually-hidden">Список друзей пользователя</h2>
                     <ul class="friends-list">
+                        <li class="friend">
+                            <h3 class="visually-hidden">Информация о друге</h3>
+                            <a class="user-profile-photo" href="#">
+                                <img src="img/user-1.png" width="62" height="62" alt="Фото пользователя">
+                            </a>
+                            <div class="friend-info">
+                                <a class="user-name" href="#">Лев Бронштейн</a>
+                                <p class="residence">г. Ханты-Мансийск</p>
+                                <p class="condition">Online</p> <!-- отображается если онлайн-->
+                            </div>
+                        </li>
+                        <li class="friend">
+                            <h3 class="visually-hidden">Информация о друге</h3>
+                            <a class="user-profile-photo" href="#">
+                                <img src="img/user-4.png" width="62" height="62" alt="Фото пользователя">
+                            </a>
+                            <div class="friend-info">
+                                <a class="user-name" href="#">Находка Капитал</a>
+                                <p class="residence">г. Усть-Бельск</p>
+                                <p class="condition">Online</p> <!-- отображается если онлайн-->
+                            </div>
+                        </li>
+                        <li class="friend">
+                            <h3 class="visually-hidden">Информация о друге</h3>
+                            <a class="user-profile-photo" href="#">
+                                <img src="img/user-2.png" width="62" height="62" alt="Фото пользователя">
+                            </a>
+                            <div class="friend-info">
+                                <a class="user-name" href="#">Яндекс Петренко</a>
+                                <p class="residence">г. Пермь</p>
+                                <p class="condition"></p> <!-- отображается если онлайн-->
+                            </div>
+                        </li>
+                        <li class="friend">
+                            <h3 class="visually-hidden">Информация о друге</h3>
+                            <a class="user-profile-photo" href="#">
+                                <img src="img/user-5.png" width="62" height="62" alt="Фото пользователя">
+                            </a>
+                            <div class="friend-info">
+                                <a class="user-name" href="#">Успех Возможностей</a>
+                                <p class="residence">г. Радонеж</p>
+                                <p class="condition">Online</p> <!-- отображается если онлайн-->
+                            </div>
+                        </li>
+                        <li class="friend">
+                            <h3 class="visually-hidden">Информация о друге</h3>
+                            <a class="user-profile-photo" href="#">
+                                <img src="img/user-3.png" width="62" height="62" alt="Фото пользователя">
+                            </a>
+                            <div class="friend-info">
+                                <a class="user-name" href="#">Инна Нашлась</a>
+                                <p class="residence">г. Омск</p>
+                                <p class="condition">Online</p> <!-- отображается если онлайн-->
+                            </div>
+                        </li>
+                        <li class="friend">
+                            <h3 class="visually-hidden">Информация о друге</h3>
+                            <a class="user-profile-photo" href="#">
+                                <img src="img/user-6.png" width="62" height="62" alt="Фото пользователя">
+                            </a>
+                            <div class="friend-info">
+                                <a class="user-name" href="#">Алла Подольская</a>
+                                <p class="residence">г. Петропавловск-Камчатский</p>
+                                <p class="condition">Online</p> <!-- отображается если онлайн-->
+                            </div>
+                        </li>
                         <li class="friend">
                             <h3 class="visually-hidden">Информация о друге</h3>
                             <a class="user-profile-photo" href="#">
