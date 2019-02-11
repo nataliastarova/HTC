@@ -10,11 +10,6 @@ body {
     text-transform: none;
 
     background-color: #dfdfdf;
-
-    /* Временно для сетки */
-    /*background-image: url("img/nerds-index.jpg");*/
-    /*background-size: 1372px auto;*/
-    /*background-repeat: no-repeat;*/
 }
 
 a {
@@ -26,6 +21,10 @@ a {
     vertical-align: middle;
     border-radius: 2px;
     border: none;
+}
+.button:hover,
+.button:focus {
+    cursor: pointer;
 }
 
 .visually-hidden,
@@ -83,14 +82,16 @@ input[type="radio"].visually-hidden {
 
 .current-label {
     display: inline-block;
+    position: relative;
+    border-bottom: none;
+
     margin: 0;
+    margin-bottom: -1px;
     margin-right: 5px;
     padding-top: 6px;
     padding-bottom: 5px;
     padding-left: 16px;
     padding-right: 16px;
-
-
 
     box-sizing: border-box;
 
@@ -101,11 +102,20 @@ input[type="radio"].visually-hidden {
     text-align: center;
     text-shadow: none;
     border-radius: 3px 3px 0 0;
-    box-shadow:
-            1px -1px 1px 0px rgba(0, 0, 0, 0.1),
-            -1px -1px 1px 0px rgba(0, 0, 0, 0.1);
+    /*box-shadow:*/
+            /*1px -1px 1px 0px rgba(0, 0, 0, 0.1),*/
+            /*-1px -1px 1px 0px rgba(0, 0, 0, 0.1);*/
     background-image: none;
     background-color: #ffffff;
+}
+
+.current-label::after {
+    content: ''; /* Добавляем пустое содержание для тени */
+    display: block; /* Блочный элемент */
+    position: absolute; /* Абсолютное позиционирование */
+    top: -1px; bottom: 0;
+    left: -1px; right: -1px; /* Тень чуть больше ширины и высоты заголовка */
+    z-index: -1;
 }
 
 .content {
@@ -114,16 +124,21 @@ input[type="radio"].visually-hidden {
     padding-right: 12px;
     padding-bottom: 14px;
     background-color: #ffffff;
+    border-radius: 0 5px 5px 5px;
+}
+
+.current-label::after,
+.content {
+
     box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
-    border-radius: 0 3px 3px 3px;
 }
 
 .user-profile {
     display: flex;
     margin: 0;
     padding: 0;
-    padding-bottom: 40px;
-    border-radius: 0 5px 5px 5px;
+    padding-bottom: 37px;
+    /*border-radius: 0 5px 5px 5px;*/
     background-color: #ffffff;
     /*outline: 1px solid orange;*/
 }
@@ -147,7 +162,8 @@ input[type="radio"].visually-hidden {
     background-position: 0 0;
 }
 
-.button.add-friend-button {
+.button.add-friend-button,
+.button {
     font-size: 12px;
     line-height: 23px;
     font-weight: 400;
@@ -170,20 +186,76 @@ input[type="radio"].visually-hidden {
     flex-direction: column;
     margin: 0;
     padding: 0;
+    padding-top: 7px;
     padding-left: 4px;
     /*outline: 1px solid yellowgreen;*/
 }
 
-.user-name.current-user-name {
+.user-name-wrapper {
+    /*position: relative;*/
+    width: 289px;
+    height: 23px;
     font-size: 23px;
     line-height: 21px;
     font-weight: 400;
     padding: 0;
     margin: 0;
-    padding-top: 8px;
+    outline: 1px solid darkred;
+}
+
+.user-name-wrapper:hover {
+    cursor: pointer;
+}
+
+.user-name.current-user-name {
+    display: block;
+    font-size: 23px;
+    line-height: 21px;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    /*padding-top: 8px;*/
 
     color: #000000;
     text-decoration: none;
+    outline-color: orchid;
+}
+
+.user-name-section {
+    display: none;
+    height:23px;
+    /*position: absolute;*/
+    /*top: 0px;*/
+    /*left: 0px;*/
+}
+
+input[type="text"].user-name-field{
+    display: block;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+    padding: 0px 5px;
+    color: #323232;
+    background-color: #ffffff;
+    border: 1px solid #d3d3d2;
+    border-radius: 3px;
+
+}
+
+input[type="text"].phone-field,
+input[type="email"].e-mail-field,
+input[type="text"].add-interest {
+    display: block;
+    box-sizing: border-box;
+    width: 130px;
+    font: inherit;
+    line-height: 21px;
+    padding: 0px 5px;
+    color: #323232;
+    background-color: #ffffff;
+    border: 1px solid #d3d3d2;
+    border-radius: 3px;
 }
 
 .residence.current-residence {
@@ -211,10 +283,11 @@ input[type="radio"].visually-hidden {
     margin: 0;
     padding: 0;
     margin-right: 32px;
+    outline: 1px solid blue;
 }
 
 .interest {
-    padding-top: 25px;
+    padding-top: 23px;
 }
 
 .user-info-list {
@@ -226,39 +299,140 @@ input[type="radio"].visually-hidden {
     margin: 0px;
     padding: 0px;
     color: #000000;
+    outline: 1px solid blue;
 }
 
+.user-info-list li {
+    margin: 0;
+    padding: 0;
+    outline: 1px solid red;
+}
+
+.phone:hover,
+.email:hover {
+    cursor: pointer;
+}
+
+.user-phone {
+    display: block;
+    width: 130px;
+    height: 23px;
+    margin: 0;
+    padding: 0;
+    outline: 1px solid green;
+}
 .user-e-mail {
+    display: block;
+    width: 130px;
+    height: 23px;
+    margin: 0;
+    padding: 0;
     color: #1574af;
     text-decoration: underline;
 }
 
+.interests-container {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 289px;
+    outline: 10px dotted  #1c6bad;
+}
+
 .user-interests-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    padding-right: 40px;
+
     list-style: none;
     font-size: 12px;
     line-height: 23px;
     font-weight: 400;
-
-    display: flex;
-    margin: 0;
-    padding: 0;
 }
 
 .user-interests-list li {
     padding-left: 9px;
     padding-right: 10px;
     margin-right: 3px;
+    margin-bottom: 3px;
 
+    color: #1574af;
     border: 1px solid #d5d5d5;
     border-radius: 2px;
-    color: #1574af;
 }
 
 .user-interests-list li:hover,
-.user-interests-list li:focus {
+.user-interests-list li:focus,
+.add-interests-button:hover {
     cursor: pointer;
     color: #000000;
     background-color: #f3f3f3;
+}
+
+.add-interests-button {
+    position: absolute;
+    top: 0px;
+    left: 260px;
+    display: none;
+    height: 23px;
+    width: 23px;
+    color: #1574af;
+    background-color: #ffffff;
+    border: 1px solid #d5d5d5;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.modal {
+    display: none;
+    position: absolute;
+    top: 23px;
+    left: 260px;
+
+    padding: 15px;
+    padding-top: 0px;
+    margin: 0;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.modal-show {
+    display: block;
+    position: absolute;
+    top: 23px;
+    left: 260px;
+
+    padding: 15px;
+    padding-top: 0px;
+    margin: 0;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.interest-form {
+    margin: 0;
+    padding: 0;
+
+}
+
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 19px;
+    width: 19px;
+    color: #000000;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 3;
 }
 
 .site-wrapper.wrapper-2 {
@@ -284,7 +458,7 @@ input[type="radio"].visually-hidden {
     /*padding-bottom: 15px;*/
     padding: 0;
     margin: 0;
-    border-radius: 0 5px 5px 5px;
+    /*border-radius: 0 5px 5px 5px;*/
     background-color: #ffffff;
     outline: 1px solid orange;
 }
@@ -308,12 +482,13 @@ input[type="radio"].visually-hidden {
 .friend {
     display: flex;
     width: 215px;
+    height: 62px;
     padding: 0;
     margin: 0;
-    margin-bottom: 25px;
+    margin-bottom: 31px;
     text-align: start;
 
-    outline: 1px solid yellowgreen;
+    /*outline: 1px solid yellowgreen;*/
     margin-right: 10px;
 
 }
@@ -322,16 +497,26 @@ input[type="radio"].visually-hidden {
     margin-right: 0px;
 }
 
-.user-profile-photo {
+.user-profile-photo  {
     padding: 0;
     margin: 0;
     margin-right: 17px;
 }
+.user-profile-photo a{
+   height: 62px;
+}
 
 .friend-info {
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    display: block;
+    display: flex;
+    flex-direction: column;
+    /*display: block;*/
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+.wrapper-friend-info {
+    height: 45px;
     margin: 0;
     padding: 0;
 }
@@ -351,7 +536,7 @@ input[type="radio"].visually-hidden {
 
 .residence {
     font-size: 11px;
-    line-height: 15px;
+    line-height: 1;
     font-weight: 400;
 
     margin: 0;
@@ -360,14 +545,14 @@ input[type="radio"].visually-hidden {
     color:  #373737;
 }
 
-.condition {
+.condition p{
     font-size: 10px;
-    line-height: 23px;
+    /*line-height: 23px;*/
     font-style: italic;
 
     padding: 0;
     margin: 0;
-    margin-top: 10px;
+    /*margin-top: 15px;*/
 
     color: #2f8a26;
 }

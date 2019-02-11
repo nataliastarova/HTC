@@ -176,7 +176,7 @@
       autohidemode:true,
       background:"",
       iframeautoresize:true,
-      cursorminheight:32,
+      cursorminheight:20,
       preservenativescrolling:true,
       railoffset:false,
       bouncescroll:true,
