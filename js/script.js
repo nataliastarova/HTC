@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
     $("#tab-profile").click(function() {
-        // console.log("profile clicked");
         $("#tab-profile").attr("class", "current-label");
         $("#tab-user-friends").attr("class", "label-tab");
 
@@ -11,7 +10,6 @@ $(document).ready(function() {
     });
 
     $("#tab-user-friends").click(function() {
-        // console.log("friends clicked");
         $("#tab-user-friends").attr("class", "current-label");
         $("#tab-profile").attr("class", "label-tab");
 
@@ -32,8 +30,12 @@ $(document).ready(function() {
     $("input").attr("maxlength", 30);
 
     var name = localStorage.name;
-    $("#name-link").text(name);
-    $("#name-field").val(name);
+    if (name == "") {
+        name =  $("#name-link").text();
+    } else {
+        $("#name-link").text(name);
+        $("#name-field").val(name);
+    }
 
     $("#name-link").click(function () {
         $("#name-link").hide();
@@ -49,8 +51,12 @@ $(document).ready(function() {
     });
 
     var phone = localStorage.phone;
-    $("#user-phone").text(phone);
-    $("#phone-field").val(phone);
+    if (phone == ""){
+        phone =  $("#user-phone").text();
+    } else {
+        $("#user-phone").text(phone);
+        $("#phone-field").val(phone);
+    }
 
     $("#user-phone").click(function () {
         $("#user-phone").hide();
@@ -66,8 +72,12 @@ $(document).ready(function() {
     });
 
     var email = localStorage.email;
-    $("#user-e-mail").text(email);
-    $("#e-mail-field").val(email);
+    if (email == "") {
+        $("#user-e-mail").text();
+    } else {
+        $("#user-e-mail").text(email);
+        $("#e-mail-field").val(email);
+    }
 
     $("#user-e-mail").click(function () {
         $("#user-e-mail").hide();
@@ -122,9 +132,6 @@ $(document).ready(function() {
         $("#add-interests-button").show();
     });
 
-    // $("#interests-container").mouseout(function () {
-    //     $("#add-interests-button").hide();
-    // });
 
     $("#add-interests-button").click(function () {
         $("#modal-interests").attr("class", "modal-show");
@@ -147,7 +154,7 @@ $(document).ready(function() {
     });
 
     function deleteInterest(interestStr) {
-        let number = interestsArr.indexOf(interestStr);
+        var number = interestsArr.indexOf(interestStr);
         if (number > -1) {
             interestsArr.splice(number, 1);
             renderInterests();

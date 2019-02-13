@@ -3,11 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <title>Тестовое задание</title>
-        <link href="css/style.css" rel="stylesheet">
+        <link href="css/normalize.css" rel="stylesheet">
+        <link href="css/style-min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="js/jquery.nicescroll.js"></script>
-        <script>
-        </script>
     </head>
     <body>
         <div class="site-wrapper">
@@ -25,7 +24,7 @@
                         <div class= "current-user user-profile-photo">
                             <a class= "visually-hidden" href="#">
                                 Фото пользователя
-                                <!--<img src="img/user-0.png" width="132" height="169" alt="Фото пользователя">-->
+                                <img src="img/user-0.png" width="132" height="169" alt="Фото пользователя">
                             </a>
                         </div>
                         <button class="button add-friend-button" type="submit">Добавить в друзья</button>
@@ -33,7 +32,7 @@
                     <section class="user-info">
                         <h2 class="visually-hidden">Личные данные</h2>
                         <div class="user-name-wrapper" id="name-wrapper">
-                            <a class="user-name current-user-name" id="name-link">Виталя Гора</a>
+                            <p class="user-name current-user-name" id="name-link">Виталя Гора</p>
                             <section id="name-section" class="visually-hidden">
                                 <h2 class="visually-hidden">Строка для ввода имени</h2>
                                 <label class="visually-hidden" for="name-field">Введите имя</label>
@@ -76,10 +75,8 @@
                                 <h3 class="visually-hidden">Добавить "интерес"</h3>
                                 <button class="close-button" id="modal-close" type="button">х</button>
                                 <form class="interest-form">
-                                    <p>
-                                        <label class="visually-hidden" for="add-interests">Новый интерес</label>
-                                        <input class="add-interest" id="add-interests" type="text" name="interest" placeholder="Ваши интересы">
-                                    </p>
+                                    <label class="visually-hidden" for="add-interests">Новый интерес</label>
+                                    <input class="add-interest" id="add-interests" type="text" name="interest" placeholder="Ваши интересы">
                                     <button class="button interest-button" id="interests-button" type="button">Добавить интерес</button>
                                 </form>
                             </section>
@@ -103,7 +100,7 @@
                                 </div>
                                 <div class="condition">
                                     <p>Online</p>
-                                </div> <!-- отображается если онлайн-->
+                                </div> <!-- отображается если пользователь онлайн-->
                             </div>
                         </li>
                         <li class="friend">
@@ -129,8 +126,8 @@
                                     <p class="residence">г. Пермь</p>
                                 </div>
                                 <!--<div class="condition">-->
-                                    <!--<p>Online</p>-->
-                                <!--</div> &lt;!&ndash; отображается если онлайн&ndash;&gt;-->
+                                <!--<p>Online</p>-->
+                                <!--</div> отображается если онлайн-->
                             </div>
                         </li>
                         <li class="friend">
@@ -145,7 +142,7 @@
                                 </div>
                                 <div class="condition">
                                     <p>Online</p>
-                                </div> <!-- отображается если онлайн-->
+                                </div> <!-- отображается если пользователь онлайн-->
                             </div>
                         </li>
                         <li class="friend">
@@ -160,7 +157,7 @@
                                 </div>
                                 <div class="condition">
                                     <p>Online</p>
-                                </div> <!-- отображается если онлайн-->
+                                </div> <!-- отображается если пользователь онлайн-->
                             </div>
                         </li>
                         <li class="friend">
@@ -175,7 +172,7 @@
                                 </div>
                                 <div class="condition">
                                     <p>Online</p>
-                                </div> <!-- отображается если онлайн-->
+                                </div> <!-- отображается если пользователь онлайн-->
                             </div>
                         </li>
                         <li class="friend">
@@ -190,7 +187,7 @@
                                 </div>
                                 <div class="condition">
                                     <p>Online</p>
-                                </div> <!-- отображается если онлайн-->
+                                </div> <!-- отображается если пользователь онлайн-->
                             </div>
                         </li>
                         <li class="friend">
@@ -205,7 +202,7 @@
                                 </div>
                                 <div class="condition">
                                     <p>Online</p>
-                                </div> <!-- отображается если онлайн-->
+                                </div> <!-- отображается если пользователь онлайн-->
                             </div>
                         </li>
                         <li class="friend">
@@ -220,7 +217,7 @@
                                 </div>
                                 <!--<div class="condition">-->
                                     <!--<p>Online</p>-->
-                                <!--</div> &lt;!&ndash; отображается если онлайн&ndash;&gt;-->
+                                <!--</div> отображается если онлайн-->
                             </div>
                         </li>
                         <li class="friend">
@@ -235,7 +232,7 @@
                                 </div>
                                 <div class="condition">
                                     <p>Online</p>
-                                </div> <!-- отображается если онлайн-->
+                                </div> <!-- отображается если пользователь онлайн-->
                             </div>
                         </li>
                         <li class="friend">
@@ -250,7 +247,7 @@
                                 </div>
                                 <div class="condition">
                                     <p>Online</p>
-                                </div> <!-- отображается если онлайн-->
+                                </div> <!-- отображается если пользователь онлайн-->
                             </div>
                         </li>
                         <li class="friend">
@@ -265,13 +262,15 @@
                                 </div>
                                 <div class="condition">
                                     <p>Online</p>
-                                </div> <!-- отображается если онлайн-->
+                                </div> <!-- отображается если пользователь онлайн-->
                             </div>
                         </li>
                     </ul>
                 </section>
             </div>
         </div>
-        <script src="js/script.js"></script>
+
+        <script src="js/script-min.js"></script>
+
     </body>
 </html>
